@@ -1,7 +1,14 @@
 {
   "plugins": ["react", "react-hooks", "prettier", "@typescript-eslint"],
-  "extends": ["eslint:recommended", "next", "next/core-web-vitals", "prettier"],
+  "extends": [
+    "eslint:recommended",
+    "next",
+    "next/core-web-vitals",
+    "eslint-config-prettier",
+    "prettier"
+  ],
   "rules": {
+    "camelcase": "warn",
     "indent": ["error", 2],
     "quotes": ["error", "double"],
     "semi": ["error", "always"]
