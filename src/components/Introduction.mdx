@@ -1,0 +1,121 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Component Library Structure" />
+
+# Atomic Design and Storybook: Component Library Structure
+
+The following documentation describes the structure of a component library using the Atomic Design patterns. Atomic Design is a methodology that suggests organizing components based on their level of abstraction, dividing them into five main categories: atoms, molecules, organisms, templates, and pages.
+
+## Atoms
+
+Atoms are the most basic and reusable components of the interface. They are the smallest building blocks and do not depend on other components to function correctly. Some examples of atoms can be:
+
+- `Button`: An interactive button.
+- `Input`: A text input field.
+- `Icon`: A graphical icon.
+
+The corresponding folder for atoms in the library structure could have the following organization:
+
+```
+src/
+  components/
+    atoms/
+      Button/
+        Button.tsx
+        Button.css
+        Button.stories.ts
+      Input/
+        Input.tsx
+        Input.css
+        Input.stories.ts
+      Icon/
+        Icon.tsx
+        Icon.css
+        Icon.stories.ts
+```
+
+## Molecules
+
+Molecules are combinations of atoms that form more complex components with additional functionality. These components consist of one or more atoms and can have internal state. Some examples of molecules can be:
+
+- `LoginForm`: A login form that combines text input fields (`Input`) and a button (`Button`).
+- `Navbar`: A navigation bar that contains elements like a logo (`Icon`) and links (`Button`).
+
+The folder structure for molecules could be similar to the following:
+
+```
+src/
+  components/
+    molecules/
+      LoginForm/
+        LoginForm.tsx
+        LoginForm.css
+        LoginForm.stories.ts
+      Navbar/
+        Navbar.tsx
+        Navbar.css
+        Navbar.stories.ts
+```
+
+## Organisms
+
+Organisms are larger and more complex components that are formed by molecules and/or atoms. They represent more complete parts of the interface and may contain business logic. Some examples of organisms can be:
+
+- `Header`: The header of a page that includes a navigation bar (`Navbar`) and other elements.
+- `ProductCard`: A card that displays information about a product and uses components like images (`Image`), buttons (`Button`), and text.
+
+The folder organization for organisms could be as follows:
+
+```
+src/
+  components/
+    organisms/
+      Header/
+        Header.tsx
+        Header.css
+        Header.stories.ts
+      ProductCard/
+        ProductCard.tsx
+        ProductCard.css
+        ProductCard.stories.ts
+```
+
+## Templates
+
+Templates are components that define the overall structure of a page. These components can contain organisms and provide a reusable design structure. Some examples of templates can be:
+
+- `DefaultTemplate`: A basic template with a header (`Header`), main content, and footer.
+- `DashboardTemplate`: A template for a dashboard that includes a sidebar menu, main content, and possibly other components.
+
+The folder structure for templates could be similar to the following:
+
+```
+src/
+  components/
+    templates/
+      DefaultTemplate/
+        DefaultTemplate.tsx
+        DefaultTemplate.css
+        DefaultTemplate.stories.ts
+      DashboardTemplate/
+        DashboardTemplate.tsx
+        DashboardTemplate.css
+        DashboardTemplate.stories.ts
+```
+
+## Pages
+
+Pages represent the actual pages of the application or website and are built using the previously mentioned components. They combine templates, organisms, molecules, and atoms to create complete user interfaces for specific purposes.
+
+```
+src/
+  pages/
+    HomePage/
+      HomePage.tsx
+      HomePage.css
+    AboutPage/
+      AboutPage.tsx
+      AboutPage.css
+```
+
+This structure follows the Atomic Design principles, allowing for a modular and scalable organization of components in your library.

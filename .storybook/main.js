@@ -4,7 +4,7 @@ const config = {
     builder: "webpack5",
   },
   stories: [
-    "../src/**/*.mdx",
+    "../src/components/*.mdx",
     "../src/components/**/**/*.stories.@(js|jsx|ts|tsx)",
   ],
   addons: [
