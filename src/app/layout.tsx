@@ -1,8 +1,6 @@
+import { Providers } from "@/redux/provider";
 import "./globals.css";
-import { Inter } from "next/font/google";
 import React from "react";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Create Next App",
@@ -15,8 +13,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" className="h-screen">
+      <body className="container mx-auto h-full p-6">
+        <Providers>{children}</Providers>
+      </body>
     </html>
   );
 }
