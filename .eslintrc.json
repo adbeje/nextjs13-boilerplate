@@ -1,10 +1,5 @@
 {
-  "plugins": [
-    "react",
-    "react-hooks",
-    "prettier",
-    "@typescript-eslint"
-  ],
+  "plugins": ["react", "react-hooks", "prettier", "@typescript-eslint"],
   "extends": [
     "eslint:recommended",
     "next",
@@ -15,18 +10,9 @@
   ],
   "rules": {
     "camelcase": "warn",
-    "indent": [
-      "error",
-      2
-    ],
-    "quotes": [
-      "error",
-      "double"
-    ],
-    "semi": [
-      "error",
-      "always"
-    ]
+    "indent": ["warn", 2],
+    "quotes": ["warn", "double"],
+    "semi": ["warn", "always"]
   },
   "root": true
 }
