@@ -9,6 +9,8 @@ function Logout() {
   useEffect(() => {
     logout();
     router.push("/");
+    // Forzando el refresh para que las cookies se actualicen en el servidor
+    router.refresh();
   });
   return null;
 }

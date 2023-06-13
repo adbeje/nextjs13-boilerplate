@@ -29,14 +29,17 @@ export default function middleware(request: NextRequest) {
   /*
    * Configuración para verificar que un usuario esté logeado
    */
-  const authTokens = request.cookies.get("authTokens")?.value;
 
-  if (request.nextUrl.pathname.startsWith("/redux") && !authTokens) {
+  
+
+  if (!(request.cookies.get("authTokens")?.value) && request.nextUrl.pathname.startsWith("/redux")) {
+    console.log(request.cookies.get("authTokens")?.value);
     const response = NextResponse.redirect(new URL("/login", request.url));
     response.cookies.delete("authTokens");
     return response;
   }
-  if (authTokens && request.nextUrl.pathname.startsWith("/login")) {
+  if (request.cookies.get("authTokens")?.value && request.nextUrl.pathname.startsWith("/login")) {
+    console.log(request.cookies.get("authTokens")?.value);
     const response = NextResponse.redirect(new URL("/", request.url));
     return response;
   }
@@ -49,9 +52,11 @@ export const config = {
      * El middleware solamente funcionará por aquellas rutas que empiecen por
      *  ----->  /redux y cualquier cosa a continuacion 
      *  -----> /login
+     *  "/redux/:path", //"/admin(.*)"
+        "/login",
+        "/",
      */
-    "/redux/:path", //"/admin(.*)"
-    "/login",
+    
 
     /*
      * Coinciden con todas las rutas de petición excepto las que empiezan por:
