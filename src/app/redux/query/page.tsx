@@ -1,4 +1,5 @@
 "use client";
+import { UserCard } from "@/components/organisms";
 import { useGetUsersQuery } from "@/redux/services/userApi";
 
 function Query() {
@@ -10,11 +11,12 @@ function Query() {
     <div className="h-full items-center">
       <div className="grid grid-cols-3 gap-3">
         {data?.map(user => (
-          <div key={user.id} className="rounded-md bg-zinc-900 p-4">
-            <p>{user.name}</p>
-            <p>{user.username}</p>
-            <p>{user.email}</p>
-          </div>
+          <UserCard
+            key={user.id}
+            name={user.name}
+            userName={user.username}
+            email={user.email}
+          />
         ))}
       </div>
     </div>
