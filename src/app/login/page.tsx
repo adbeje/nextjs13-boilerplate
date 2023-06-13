@@ -32,7 +32,7 @@ function Page() {
     login({token: response.token, refreshToken: response.token});
 
     router.push("/");
-    router.refresh();
+    //router.refresh();
   };
   return (
     <div >
