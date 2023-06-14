@@ -1,70 +1,33 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
+import type { NextRequest } from "next/server";
 
-export default function middleware(request: NextRequest) {
+export function middleware(request: NextRequest) {
+  const pathname = request.url;
+  let isLoginPage = pathname.endsWith("/login");
+  let hasAuthCookies = request.cookies.has("authTokens");
+  console.log({ isLoginPage, hasAuthCookies, pathname });
 
-  /* 
-
-  Para cada llamada se puede comprobar que lo que devuelve es algo diferente
-  a usuario sin autorizacion, en el caso de que no tenga autorización redirigimos a login en ve de
-  mostrar el error o tratamos de conseguir el refreshtoken y volvemos a tirar la llamada
-
-
-  const requestHeaders = new Headers(request.headers);
-  requestHeaders.set("prueba headders", "prueba");
-  const response = NextResponse.next({
-    request: {
-      headers: requestHeaders,
-    },
-  }); 
-  
-  */
-
-  /*
-   * Ejemplo de redireccion dependiendo de la ruta
-   */
-  if (request.nextUrl.pathname.endsWith("/redux")) {
-    return NextResponse.redirect(new URL("/redux/state", request.url));
-  }
-
-  /*
-   * Configuración para verificar que un usuario esté logeado
-   */
-
-  
-
-  if (!(request.cookies.get("authTokens")?.value) && request.nextUrl.pathname.startsWith("/redux")) {
-    console.log(request.cookies.get("authTokens")?.value);
-    const response = NextResponse.redirect(new URL("/login", request.url));
-    response.cookies.delete("authTokens");
-    return response;
-  }
-  if (request.cookies.get("authTokens")?.value && request.nextUrl.pathname.startsWith("/login")) {
-    console.log(request.cookies.get("authTokens")?.value);
-    const response = NextResponse.redirect(new URL("/", request.url));
-    return response;
-  }
+  if (!isLoginPage && !hasAuthCookies) return redirectLoginPage(request);
+  if (isLoginPage && hasAuthCookies) return redirectHomePage(request);
 }
-
 
 export const config = {
   matcher: [
     /*
-     * El middleware solamente funcionará por aquellas rutas que empiecen por
-     *  ----->  /redux y cualquier cosa a continuacion 
-     *  -----> /login
-     *  "/redux/:path", //"/admin(.*)"
-        "/login",
-        "/",
-     */
-    
-
-    /*
-     * Coinciden con todas las rutas de petición excepto las que empiezan por:
-     * -----> api (API routes)
-     * -----> _next/static (static files)
-     * -----> _next/image (image optimization files)
-     * -----> favicon.ico (favicon file)
+     * Match all request paths except for the ones starting with:
+     * - api (API routes)
+     * - _next/static (static files)
+     * - _next/image (image optimization files)
+     * - favicon.ico (favicon file)
      */
     "/((?!api|_next/static|_next/image|favicon.ico).*)",
   ],
 };
+
+function redirectLoginPage(request: NextRequest) {
+  return NextResponse.redirect(new URL("/login", request.url));
+}
+
+function redirectHomePage(request: NextRequest) {
+  return NextResponse.redirect(new URL("/", request.url));
+}

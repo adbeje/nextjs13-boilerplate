@@ -5,7 +5,7 @@ import {
   createContext,
   useCallback, useMemo
 } from "react";
-import { getAuth, removeAuth, setAuth } from "@/lib/storage";
+import { isAuthed, removeAuth, setAuth } from "@/lib/storage";
 
 
 
@@ -34,7 +34,7 @@ export default function AuthContextProvider({
   const logout = useCallback( removeAuth, []);
 
   const isLogged = useCallback( () => {
-    return !!getAuth();
+    return isAuthed();
   }, []);
 
   const value = useMemo(

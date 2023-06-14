@@ -4,7 +4,7 @@ import React, { FormEvent } from "react";
 import { useRouter } from "next/navigation";
 import { useAuthContext } from "@/hooks";
 
-function Page() {
+function Login() {
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
   const router = useRouter();
@@ -66,4 +66,4 @@ function Page() {
   );
 }
 
-export default Page;
+export default Login;
