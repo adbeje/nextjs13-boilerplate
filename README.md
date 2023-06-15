@@ -20,10 +20,10 @@ Asegúrate de tener instalado lo siguiente en tu entorno de desarrollo:
 
 ## Configuración
 
-1. Clona este repositorio en tu máquina local:
+1. Usa este repositorio para arrancar tu proyecto de Next.js:
 
    ```bash
-   git clone <URL_DEL_REPOSITORIO>
+   ╰─ npx create-next-app --use-<ADMIN_PACK_FAV> -e https://github.com/adbeje/nextjs13-boilerplate.git
    ```
 
 2. Navega al directorio del proyecto:
@@ -37,12 +37,18 @@ Asegúrate de tener instalado lo siguiente en tu entorno de desarrollo:
    ```bash
    npm install
    ```
+    o
 
+   ```bash
+   pnmp
+   ```
+   
    o
 
    ```bash
    yarn
    ```
+
 
 4. ¡Listo! Ahora puedes comenzar a desarrollar tu aplicación utilizando este boilerplate de Next.js.
 
@@ -50,16 +56,16 @@ Asegúrate de tener instalado lo siguiente en tu entorno de desarrollo:
 
 En el directorio del proyecto, puedes ejecutar los siguientes comandos:
 
-- `npm run dev` o `yarn dev`: Inicia el servidor de desarrollo de Next.js.
-- `npm run build` o `yarn build`: Compila la aplicación para producción.
-- `npm run start` o `yarn start`: Inicia el servidor de producción.
-- `npm run lint` o `yarn lint`: Ejecuta ESlint para analizar y corregir problemas en el código.
-- `npm run format` o `yarn format`: Formatea automáticamente el código utilizando Prettier.
-- `npm run storybook` o `yarn storybook`: Inicia el servidor de Storybook para ver y probar tus componentes.
+- `npm/pnpm run dev` o `yarn dev`: Inicia el servidor de desarrollo de Next.js.
+- `npm/pnpm run build` o `yarn build`: Compila la aplicación para producción.
+- `npm/pnpm run start` o `yarn start`: Inicia el servidor de producción.
+- `npm/pnpm run lint` o `yarn lint`: Ejecuta ESlint para analizar y corregir problemas en el código.
+- `npm/pnpm run format` o `yarn format`: Formatea automáticamente el código utilizando Prettier.
+- `npm/pnpm run storybook` o `yarn storybook`: Inicia el servidor de Storybook para ver y probar tus componentes.
 
 ## Uso del inicio de sesión dummy
 
-Este boilerplate viene con un inicio de sesión dummy preconfigurado para ayudarte a comenzar con la autenticación en tu aplicación. Puedes encontrar el código relacionado en el directorio `middleware` y `pages/login.js`.
+Este boilerplate viene con un inicio de sesión dummy preconfigurado para ayudarte a comenzar con la autenticación en tu aplicación. Puedes encontrar el código relacionado en el directorio `middleware` y `app/Login/Login.tsx`.
 
 El inicio de sesión dummy te permite iniciar sesión utilizando las siguientes credenciales:
 
