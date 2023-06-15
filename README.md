@@ -40,7 +40,7 @@ Asegúrate de tener instalado lo siguiente en tu entorno de desarrollo:
     o
 
    ```bash
-   pnmp
+   pnmp install
    ```
    
    o
