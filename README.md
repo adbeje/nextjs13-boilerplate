@@ -1,75 +1,75 @@
-# Boilerplate de Next.js y más
+# Next.js Boilerplate and More
 
-Este es un boilerplate (plantilla inicial) de Next.js que te permite comenzar rápidamente con el desarrollo de aplicaciones web. Está configurado con herramientas y extensiones populares para garantizar un control de calidad del código y una experiencia de desarrollo eficiente. Además, incluye un inicio de sesión dummy gestionado con un middleware para ayudarte a empezar con la autenticación en tu aplicación.
+This is a Next.js boilerplate that allows you to quickly start web application development. It is preconfigured with popular tools and extensions to ensure code quality and an efficient development experience. Additionally, it includes a dummy login feature managed with middleware to help you get started with authentication in your application.
 
-## Características
+## Key Features
 
-- **Next.js**: Un marco de trabajo de React de alto rendimiento y con enfoque en el lado del servidor (SSR) y renderizado del lado del cliente (CSR).
-- **ESlint**: Un linter para JavaScript que te ayuda a mantener un código limpio y consistente.
-- **Prettier**: Un formateador de código que te permite establecer reglas de estilo y formatear automáticamente el código para mantener la consistencia.
-- **Storybook**: Una herramienta de desarrollo que te permite crear y mostrar componentes de forma aislada para una fácil iteración y documentación.
-- **Redux**: Un contenedor de estado predecible para aplicaciones JavaScript. Te ayuda a mantener un estado global y a manejar acciones y cambios de forma ordenada.
-- **Inicio de sesión dummy**: Un sistema básico de inicio de sesión que utiliza `https://dummyjson.com/docs/auth` para simular la autenticación y el manejo de sesiones en tu aplicación todo almacenado en las Cookies del servidor.
+- **Next.js**: A high-performance React framework focused on server-side rendering (SSR) and client-side rendering (CSR).
+- **ESLint**: A JavaScript linter that helps you maintain clean and consistent code.
+- **Prettier**: A code formatter that allows you to set style rules and automatically format code to maintain consistency.
+- **Tailwind CSS**: A highly customizable and low-level CSS styling library that provides a wide range of pre-built utility classes.
+- **Storybook**: A development tool that allows you to create and showcase components in isolation for easy iteration and documentation.
+- **Redux**: A predictable state container for JavaScript applications. It helps you manage global state and handle actions and changes in an organized manner.
+- **Dummy Login**: A basic login system that uses `https://dummyjson.com/docs/auth` to simulate authentication and session handling in your application, all stored in server-side cookies.
 
-## Requisitos previos
+## Prerequisites
 
-Asegúrate de tener instalado lo siguiente en tu entorno de desarrollo:
+Make sure you have the following installed in your development environment:
 
 - Node.js
-- npm o Yarn
+- npm or Yarn
 
-## Configuración
+## Setup
 
-1. Usa este repositorio para arrancar tu proyecto de Next.js:
+1. Use this repository to bootstrap your Next.js project:
 
    ```bash
    ╰─ npx create-next-app --use-<ADMIN_PACK_FAV> -e https://github.com/adbeje/nextjs13-boilerplate.git
    ```
 
-2. Navega al directorio del proyecto:
+2. Navigate to the project directory:
 
    ```bash
-   cd <NOMBRE_DEL_PROYECTO>
+   cd <PROJECT_NAME>
    ```
 
-3. Instala las dependencias:
+3. Install dependencies:
 
    ```bash
    npm install
    ```
-    o
+    or
 
    ```bash
-   pnmp install
+   pnpm install
    ```
    
-   o
+   or
 
    ```bash
    yarn
    ```
 
+4. Great! You can now start developing your application using this Next.js boilerplate.
 
-4. ¡Listo! Ahora puedes comenzar a desarrollar tu aplicación utilizando este boilerplate de Next.js.
+## Available Commands
 
-## Comandos disponibles
+In the project directory, you can run the following commands:
 
-En el directorio del proyecto, puedes ejecutar los siguientes comandos:
+- `npm/pnpm run dev` or `yarn dev`: Starts the Next.js development server.
+- `npm/pnpm run build` or `yarn build`: Builds the application for production.
+- `npm/pnpm run start` or `yarn start`: Starts the production server.
+- `npm/pnpm run lint` or `yarn lint`: Runs ESlint to analyze and fix issues in the code.
+- `npm/pnpm run format` or `yarn format`: Automatically formats the code using Prettier.
+- `npm/pnpm run storybook` or `yarn storybook`: Starts the Storybook server to view and test your components.
 
-- `npm/pnpm run dev` o `yarn dev`: Inicia el servidor de desarrollo de Next.js.
-- `npm/pnpm run build` o `yarn build`: Compila la aplicación para producción.
-- `npm/pnpm run start` o `yarn start`: Inicia el servidor de producción.
-- `npm/pnpm run lint` o `yarn lint`: Ejecuta ESlint para analizar y corregir problemas en el código.
-- `npm/pnpm run format` o `yarn format`: Formatea automáticamente el código utilizando Prettier.
-- `npm/pnpm run storybook` o `yarn storybook`: Inicia el servidor de Storybook para ver y probar tus componentes.
+## Using the Dummy Login
 
-## Uso del inicio de sesión dummy
+This boilerplate comes with a preconfigured dummy login to help you get started with authentication in your application. You can find the related code in the `middleware` directory and `app/Login/Login.tsx` file.
 
-Este boilerplate viene con un inicio de sesión dummy preconfigurado para ayudarte a comenzar con la autenticación en tu aplicación. Puedes encontrar el código relacionado en el directorio `middleware` y `app/Login/Login.tsx`.
+The dummy login allows you to log in using the following credentials:
 
-El inicio de sesión dummy te permite iniciar sesión utilizando las siguientes credenciales:
+- Username: `kminchelle`
+- Password: `0lelplR`
 
-- Usuario: `kminchelle`
-- Contraseña: `0lelplR`
-
-Este inicio de sesión dummy se puede reemplazar fácilmente por una implementación de autenticación real utilizando tu propio servicio de autenticación. La gestión de rutas y el acceso a ellas se realiza a través del middleware incluido en este boilerplate.
+This dummy login can be easily replaced with a real authentication implementation using your own authentication service. Route management and access are handled through the middleware included in this boilerplate.
